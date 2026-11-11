@@ -14,17 +14,16 @@ Zero zależności runtime: Node.js + wbudowane `node:sqlite`, `node:http`, `node
 Wymagania: **Node.js ≥ 22.5** (`node:sqlite`), testowane na Node 24.
 
 ```bash
-cd server
-npm start
+npm start           # z katalogu głównego repozytorium
 # podstrona: http://127.0.0.1:8787/
 # panel:     http://127.0.0.1:8787/admin   (hasło demo: demo-admin)
 # health:    http://127.0.0.1:8787/api/health
 ```
 
-Testy:
+Testy (z katalogu głównego repozytorium):
 
 ```bash
-npm test        # node --test "test/**/*.test.mjs"
+npm test            # node --test "tests/*.test.mjs" — API, panel, statyka, bezpieczeństwo
 ```
 
 Baza i skrzynka powstają same w `server/var/`:
@@ -65,7 +64,6 @@ H2_IP_SALT="$(openssl rand -hex 16)" \
 H2_MAIL_TRANSPORT=file \
 npm start
 ```
-
 ---
 
 ## 3. API publiczne
@@ -239,7 +237,6 @@ To jest wersja pokazowa kontraktu, nie finalny produkt. Przed produkcją trzeba 
 
 ```
 server/
-├── package.json
 ├── src/
 │   ├── index.mjs        # start serwera, obsługa SIGINT/SIGTERM
 │   ├── app.mjs          # routing, API publiczne i admin, CSV, statyka, CSP
@@ -248,6 +245,12 @@ server/
 │   ├── validate.mjs     # reguły walidacji zgłoszenia i edycji w panelu
 │   └── mail.mjs         # szablony, transport file/smtp, pliki .eml
 ├── public/admin/        # panel: index.html, app.css, app.js
-├── test/api.test.mjs    # 5 zestawów testów (API, panel, statyka, bezpieczeństwo)
 └── var/                 # dane lokalne, poza repozytorium
+
+# poza katalogiem server/:
+├── package.json         # skrypty npm (start, test) — bez zależności runtime
+├── tests/
+│   ├── api.test.mjs     # 5 zestawów testów (API, panel, statyka, bezpieczeństwo)
+│   └── test_docs_links.py
+└── tools/check_docs_links.py
 ```

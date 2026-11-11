@@ -12,6 +12,32 @@
 *.log
 *.tmp
 
-# Prototyp modułu rejestracji — dane lokalne
+# Node
+node_modules/
+npm-debug.log*
+
+# Prototyp modułu rejestracji — dane lokalne (baza, korespondencja)
 server/var/
-server/node_modules/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.eml
+
+# Python — narzędzia jakości
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Sekrety — NIGDY nie commitować
+.env
+.env.*
+secrets.env
+*.pem
+*.key
+*.crt
+*_token*
+*_secret*

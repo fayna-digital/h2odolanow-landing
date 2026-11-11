@@ -4,8 +4,8 @@ import http from 'node:http';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { loadConfig } from '../src/config.mjs';
-import { createApp } from '../src/app.mjs';
+import { loadConfig } from '../server/src/config.mjs';
+import { createApp } from '../server/src/app.mjs';
 
 /**
  * Testy prototypu modułu rejestracji. Każdy zestaw dostaje własną bazę
