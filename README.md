@@ -1,6 +1,6 @@
-# H2Odolanów 2027 — landing page konferencji
+# H2O!dolanów 2027 — landing page konferencji
 
-Warstwa frontendowa podstrony ogólnopolskiej konferencji **H2Odolanów** (27–28 kwietnia 2027 r.,
+Warstwa frontendowa podstrony ogólnopolskiej konferencji **H2O!dolanów** (27–28 kwietnia 2027 r.,
 teren Klastra Energii Odolanów–Przygodzice–Sulmierzyce), przygotowana pod wymagania
 *Opisu funkcjonalno-technicznego*.
 

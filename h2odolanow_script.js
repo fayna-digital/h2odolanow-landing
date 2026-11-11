@@ -1,4 +1,4 @@
-// H2Odolanów 2027 — logika strony
+// H2O!dolanów 2027 — logika strony
 // Nagłówek, menu mobilne, licznik, zakładki programu, walidacja formularza.
 
 (function () {
