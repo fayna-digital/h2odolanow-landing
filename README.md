@@ -5,9 +5,9 @@ teren Klastra Energii Odolanów–Przygodzice–Sulmierzyce), przygotowana pod w
 *Opisu funkcjonalno-technicznego*.
 
 HTML + CSS + waniliowy JavaScript, bez frameworków, bez procesu budowania i bez zależności
-poza krojem pisma z Google Fonts. Repozytorium zawiera **gotową warstwę prezentacji**;
-rejestracja, baza zgłoszeń, panel administracyjny i wpięcie w CMS urzędu to warstwa serwerowa,
-opisana w sekcjach 5 i 6.
+poza krojem pisma z Google Fonts. Repozytorium zawiera **warstwę prezentacji**, **działający
+prototyp modułu rejestracji** (`server/`: API, baza, e-maile, panel zgłoszeń) oraz **wycenę
+i odpowiedzi na OPZ §8** (`docs/oferta.md`). Wpięcie w CMS urzędu opisuje sekcja 6.
 
 ---
 
@@ -17,7 +17,9 @@ opisana w sekcjach 5 i 6.
 | --- | --- |
 | `h2odolanow_landing.html` | Cała strona: pasek informacyjny, nagłówek, 12 sekcji, stopka. Miejsca do uzupełnienia oznaczone komentarzami `<!-- CONTENT: ... -->`. |
 | `h2odolanow_style.css` | Tokeny identyfikacji, układ wszystkich sekcji, formularz, stany fokusa, `prefers-reduced-motion`, `forced-colors`. |
-| `h2odolanow_script.js` | Nagłówek po przewinięciu, menu mobilne (ARIA, Escape, klik poza), licznik do 27.04.2027, zakładki programu (strzałki/Home/End), walidacja formularza, animacje wejścia. |
+| `h2odolanow_script.js` | Nagłówek po przewinięciu, menu mobilne (ARIA, Escape, klik poza), licznik do 27.04.2027, zakładki programu (strzałki/Home/End), walidacja formularza, tryb żywy rejestracji, animacje wejścia. |
+| `server/` | Prototyp warstwy serwerowej: API zgłoszeń, baza SQLite, e-maile, panel zgłoszeń, CSV. Opis w `server/README.md`. |
+| `docs/oferta.md` | Wycena wykonania podstrony (3 warianty), odpowiedzi na punkty OPZ §8, harmonogram i warunki. |
 | `assets/` | Herb gminy, zdjęcia w trzech szerokościach (`-800`, `-1200`, pełna) pod `srcset`. |
 | `README.md` | Ten dokument. |
 
@@ -36,7 +38,7 @@ opisana w sekcjach 5 i 6.
 | 4.5 | Prelegenci i moderatorzy (karty) | `#prelegenci` | siatka gotowa, **dane do uzupełnienia** |
 | 4.6 | Miejsce: opis, mapa, dojazd, parking, autobus Mercedes-Benz | `#miejsce` | gotowe, **zdjęcia autobusu do uzupełnienia** |
 | 4.7 | Organizatorzy, partnerzy, patronaty (5 kategorii) | `#organizatorzy` | kategorie gotowe, **logotypy do uzupełnienia** |
-| 4.8 | Formularz rejestracyjny | `#rejestracja` | frontend gotowy, **backend wymagany** (sekcja 5) |
+| 4.8 | Formularz rejestracyjny | `#rejestracja` | frontend + tryb żywy gotowe, prototyp backendu w `server/` |
 | 4.9 | Kontakt | `#kontakt` | dane urzędu gotowe, **osoba kontaktowa do uzupełnienia** |
 | 4.10 | Stopka: herb, linki formalne, partnerzy, dofinansowanie | `footer` | gotowe |
 
@@ -100,9 +102,9 @@ celowo płaska, żeby dała się przenieść do szablonu bez przepisywania.
 
 ---
 
-## 5. Formularz rejestracji — stan i kontrakt backendu
+## 5. Formularz rejestracji — frontend, tryb żywy i prototyp backendu
 
-### Co działa teraz (frontend)
+### Frontend
 
 - Pola: imię i nazwisko\*, instytucja/firma\*, stanowisko, e-mail\*, telefon\*, miejscowość,
   rodzaj zgłoszenia (uczestnik / prelegent / partner / media), dodatkowe informacje.
@@ -112,26 +114,32 @@ celowo płaska, żeby dała się przenieść do szablonu bez przepisywania.
 - Antyspam: pole-pułapka (`#reg-website`, ukryte) oraz blokada wysyłki przed upływem 2 s od wejścia.
 - `novalidate` + własne komunikaty po polsku; `aria-live` na statusie formularza.
 
-Formularz ma `action="#"`, więc **nie zapisuje danych**. Po poprawnym wypełnieniu pokazuje uczciwy
-komunikat, że to wersja demonstracyjna — nie udaje wysłanego zgłoszenia.
+Formularz sam rozpoznaje, z czym pracuje:
 
-### Czego wymaga OPZ 4.8 (warstwa serwerowa)
+| Warunek | Tryb | Zachowanie |
+| --- | --- | --- |
+| `GET /api/health` odpowiada `service: "h2odolanow-registration"` | żywy | `POST /api/registrations`, obsługa kodów 201/202/400/409/429/503, komunikaty przy polach |
+| brak backendu (plik otwarty z dysku, hosting statyczny) | demo | uczciwy komunikat „zgłoszenie nie zostało zapisane”, bez udawania wysyłki |
 
-1. **Endpoint** przyjmujący `POST` (JSON lub `FormData`), HTTPS, CSRF token, rate limit per IP.
-2. **Walidacja po stronie serwera** — te same reguły co frontend, nigdy tylko frontend.
-3. **Zapis do bazy** — tabela zgłoszeń z czasem przyjęcia i statusem.
-4. **E-mail do uczestnika** — potwierdzenie przyjęcia zgłoszenia (szablon edytowalny z panelu).
-5. **E-mail do organizatora** — powiadomienie o nowym zgłoszeniu (co najmniej jeden adres, najlepiej lista).
-6. **Antyspam serwerowy** — honeypot + time-gate + CAPTCHA (hCaptcha/Turnstile) lub równoważne.
-7. **Panel administracyjny** — lista zgłoszeń, wyszukiwanie i filtrowanie, eksport CSV/XLSX,
-   edycja zgłoszenia, zamykanie/otwieranie rejestracji, edycja treści e-maili, zarządzanie polami.
-8. **Bezpieczeństwo danych** — dostęp po zalogowaniu z rolami, szyfrowanie kopii, retencja i usuwanie
-   danych zgodnie z RODO, log dostępu.
+### Prototyp backendu — `server/`
 
-### Proponowany kontrakt
+Kompletny, uruchamialny prototyp OPZ 4.8: przyjmowanie zgłoszeń (JSON lub formularz), walidacja
+serwerowa, baza SQLite, dwa e-maile automatyczne (potwierdzenie + powiadomienie organizatora),
+panel zgłoszeń z logowaniem, filtrami, edycją, usuwaniem, eksportem CSV i zamykaniem rejestracji,
+oraz edycja treści e-maili z panelu. Zero zależności runtime (Node.js + `node:sqlite`).
+
+```bash
+cd server && npm start
+# podstrona: http://127.0.0.1:8787/   panel: /admin   testy: npm test
+```
+
+Pełny opis — konfiguracja, endpointy, kontrakt, wdrożenie i świadome ograniczenia prototypu —
+jest w [`server/README.md`](server/README.md).
+
+### Kontrakt wdrożony w prototypie
 
 ```http
-POST /api/h2odolanow/registrations
+POST /api/registrations
 Content-Type: application/json
 ```
 
@@ -154,14 +162,24 @@ Content-Type: application/json
 
 | Odpowiedź | Znaczenie | Reakcja frontendu |
 | --- | --- | --- |
-| `200 { "ok": true }` | zgłoszenie zapisane, e-maile wysłane | komunikat sukcesu, reset formularza |
+| `201 { "ok": true, "id": 12 }` | zgłoszenie zapisane, e-maile wysłane | komunikat sukcesu, reset formularza |
+| `202 { "ok": true }` | honeypot wypełniony — bot dostaje sukces, nic nie zapisujemy | komunikat sukcesu |
 | `400 { "errors": { "email": "…" } }` | błąd walidacji | komunikaty przy polach |
-| `409` | e-mail już zgłoszony | komunikat „ten adres jest już zapisany” |
-| `429` | rate limit / CAPTCHA | komunikat „spróbuj później” |
-| `503` | rejestracja zamknięta lub błąd wysyłki | komunikat z kontaktem do organizatora |
+| `400 { "error": "too_fast" }` | formularz wysłany zbyt szybko | „spróbuj ponownie” |
+| `409` | e-mail już zgłoszony | komunikat + fokus na e-mail |
+| `429` | limit 5 zgłoszeń / 10 min z jednego IP | komunikat „spróbuj później” |
+| `503` | rejestracja zamknięta w panelu | komunikat z kontaktem do organizatora |
 
-Podłączenie to podmiana `action` w `<form>` i zamiana bloku `window.setTimeout(...)` w
-`h2odolanow_script.js` na `fetch` z obsługą powyższych kodów.
+W produkcji podstrona stoi w podkatalogu domeny urzędu, więc adresy trzeba złożyć z bazy
+(np. `data-api-base="/h2odolanow"`) albo przepisać je w reverse proxy — patrz
+`server/README.md`, sekcja 7.
+
+### Czego OPZ 4.8 wymaga ponad prototyp
+
+Prototyp pokazuje kontrakt i działa end-to-end, ale przed produkcją dochodzą: CAPTCHA
+(Cloudflare Turnstile), konta z rolami i 2FA zamiast jednego hasła, sesje w bazie, migracje
+schematu, polityka retencji i automatyczne czyszczenie, kolejka wysyłki poczty, paginacja
+w interfejsie panelu, monitoring i testy obciążeniowe. Lista jest w `server/README.md`, sekcja 8.
 
 ---
 
@@ -216,9 +234,20 @@ Do ustawienia po publikacji: absolutny `og:image` i `og:url` (np. `https://www.o
 
 ## 9. Uruchomienie lokalne
 
+Sama warstwa prezentacji (formularz w trybie demo):
+
 ```bash
 python3 -m http.server 8000
 # http://localhost:8000/h2odolanow_landing.html
+```
+
+Pełny zestaw z rejestracją, bazą i panelem (formularz w trybie żywym):
+
+```bash
+cd server
+npm start
+# podstrona: http://127.0.0.1:8787/   panel: http://127.0.0.1:8787/admin
+npm test    # testy API, panelu, statyki i bezpieczeństwa
 ```
 
 Krój Open Sans jest pobierany z Google Fonts. Dla wersji bez dostępu do internetu pobierz pliki
@@ -253,6 +282,6 @@ należy użyć zdjęć własnych.
 - [ ] Dokładna lokalizacja, dojazd, parking (uzupełnić `dl.facts`).
 - [ ] Osoba kontaktowa z bezpośrednim telefonem i e-mailem.
 - [ ] Podlinkowana polityka prywatności, deklaracja dostępności, klauzula RODO zatwierdzona przez IOD.
-- [ ] Backend rejestracji + panel zgłoszeń (sekcja 5) i test wysyłki e-maili.
+- [ ] Backend rejestracji: przegląd prototypu z `server/`, dodanie CAPTCHA, role i 2FA, polityka retencji, test wysyłki e-maili przez SMTP.
 - [ ] Absolutne `og:url` / `og:image`, `canonical`, `sitemap`.
 - [ ] Test na Safari (iOS), Chrome (Android), przeglądarka urzędowa; kontrast i klawiatura.

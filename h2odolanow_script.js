@@ -164,6 +164,28 @@
     var honeypot = document.getElementById('reg-website');
     var loadedAt = Date.now();
     var attempted = false;
+    var live = false;
+
+    // Sprawdzamy, czy podstrona działa z modułem rejestracji. Bez backendu
+    // formularz pozostaje w trybie demonstracyjnym i mówi o tym wprost.
+    var ready = fetch('/api/health', { cache: 'no-store', headers: { accept: 'application/json' } })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (payload) {
+        if (!payload || payload.ok !== true || payload.service !== 'h2odolanow-registration') return false;
+        live = true;
+        return fetch('/api/registration-status', { cache: 'no-store' })
+          .then(function (response) { return response.ok ? response.json() : null; })
+          .then(function (state) {
+            if (state && state.open === false) {
+              setStatus(
+                'Rejestracja jest chwilowo zamknięta. Informacje: sekretariat@odolanow.pl, tel. 62 733 15 81.',
+                'error'
+              );
+            }
+            return true;
+          });
+      })
+      .catch(function () { return false; });
 
     var rules = {
       'reg-name': {
@@ -261,6 +283,132 @@
       else status.removeAttribute('data-state');
     }
 
+    function setBusy(busy) {
+      if (!submit) return;
+      submit.disabled = busy;
+      submit.textContent = busy ? 'Wysyłanie…' : 'Wyślij zgłoszenie';
+    }
+
+    function collect() {
+      function value(id) {
+        var field = document.getElementById(id);
+        return field ? field.value : '';
+      }
+      function checked(id) {
+        var field = document.getElementById(id);
+        return Boolean(field && field.checked);
+      }
+      return {
+        name: value('reg-name'),
+        organization: value('reg-org'),
+        position: value('reg-position'),
+        email: value('reg-email'),
+        phone: value('reg-phone'),
+        city: value('reg-city'),
+        type: value('reg-type') || 'uczestnik',
+        notes: value('reg-notes'),
+        consent_rodo: checked('reg-consent-rodo'),
+        consent_contact: checked('reg-consent-contact'),
+        website: honeypot ? honeypot.value : '',
+        form_loaded_at: new Date(loadedAt).toISOString()
+      };
+    }
+
+    var ERROR_FIELDS = {
+      name: 'reg-name',
+      organization: 'reg-org',
+      email: 'reg-email',
+      phone: 'reg-phone',
+      consent_rodo: 'reg-consent-rodo'
+    };
+
+    function applyServerErrors(errors) {
+      var first = null;
+      Object.keys(errors).forEach(function (key) {
+        var id = ERROR_FIELDS[key];
+        if (!id) return;
+        setError(id, errors[key]);
+        if (!first) first = document.getElementById(id);
+      });
+      if (first) first.focus();
+    }
+
+    function finishAfterSuccess(message) {
+      setBusy(false);
+      form.reset();
+      attempted = false;
+      loadedAt = Date.now();
+      setStatus(
+        message ||
+          'Dziękujemy. Zgłoszenie zostało zapisane, potwierdzenie wysłaliśmy na podany adres e-mail.',
+        'success'
+      );
+    }
+
+    function sendLive() {
+      return fetch('/api/registrations', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify(collect())
+      })
+        .then(function (response) {
+          return response
+            .json()
+            .catch(function () { return {}; })
+            .then(function (payload) { return { status: response.status, payload: payload || {} }; });
+        })
+        .then(function (result) {
+          var payload = result.payload;
+
+          if (result.status === 201 || result.status === 202) {
+            finishAfterSuccess(payload.message);
+            return;
+          }
+
+          setBusy(false);
+
+          if (result.status === 400 && payload.errors) {
+            applyServerErrors(payload.errors);
+            setStatus('Proszę poprawić zaznaczone pola formularza.', 'error');
+            return;
+          }
+
+          if (result.status === 409) {
+            setError('reg-email', payload.message || 'Ten adres e-mail jest już zapisany.');
+            var email = document.getElementById('reg-email');
+            if (email) email.focus();
+          }
+
+          setStatus(
+            payload.message || 'Nie udało się wysłać zgłoszenia. Spróbuj ponownie później.',
+            'error'
+          );
+        })
+        .catch(function () {
+          setBusy(false);
+          setStatus(
+            'Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.',
+            'error'
+          );
+        });
+    }
+
+    function sendDemo() {
+      // Brak backendu: pokazujemy uczciwy komunikat zamiast udawać zapis.
+      window.setTimeout(function () {
+        setBusy(false);
+        form.reset();
+        attempted = false;
+        loadedAt = Date.now();
+        setStatus(
+          'Dziękujemy. Formularz działa w wersji demonstracyjnej — zgłoszenie nie zostało ' +
+          'jeszcze zapisane. Po podłączeniu do systemu urzędu potwierdzenie trafi na podany e-mail.',
+          'success'
+        );
+      }, 600);
+    }
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       attempted = true;
@@ -287,25 +435,17 @@
         return;
       }
 
-      if (submit) {
-        submit.disabled = true;
-        submit.textContent = 'Wysyłanie…';
-      }
-
-      // Brak backendu: pokazujemy uczciwy komunikat zamiast udawać zapis.
-      window.setTimeout(function () {
-        if (submit) {
-          submit.disabled = false;
-          submit.textContent = 'Wyślij zgłoszenie';
-        }
-        form.reset();
-        attempted = false;
-        setStatus(
-          'Dziękujemy. Formularz działa w wersji demonstracyjnej — zgłoszenie nie zostało ' +
-          'jeszcze zapisane. Po podłączeniu do systemu urzędu potwierdzenie trafi na podany e-mail.',
-          'success'
-        );
-      }, 600);
+      setBusy(true);
+      ready
+        .then(function (isLive) {
+          if (isLive && live) return sendLive();
+          sendDemo();
+          return null;
+        })
+        .catch(function () {
+          setBusy(false);
+          setStatus('Nie udało się wysłać zgłoszenia. Spróbuj ponownie później.', 'error');
+        });
     });
   }
 

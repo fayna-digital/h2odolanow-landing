@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel zgłoszeń — H2O!dolanów</title>
+  <link rel="stylesheet" href="/admin/app.css">
+</head>
+<body>
+  <header class="bar">
+    <div>
+      <p class="bar__kicker">Panel administracyjny</p>
+      <h1>Zgłoszenia na konferencję H2O!dolanów</h1>
+    </div>
+    <div class="bar__side">
+      <span id="whoami" class="bar__who"></span>
+      <button id="logout" class="btn btn--ghost" type="button" hidden>Wyloguj</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="login-view" class="card" aria-labelledby="login-title">
+      <h2 id="login-title">Logowanie</h2>
+      <p class="hint">Hasło ustawia zmienna środowiskowa <code>H2_ADMIN_PASSWORD</code>. Dostęp mają wyłącznie osoby upoważnione do przetwarzania danych osobowych.</p>
+      <form id="login-form" class="row">
+        <label class="field">
+          <span>Hasło</span>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn" type="submit">Zaloguj</button>
+      </form>
+      <p id="login-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <div id="panel-view" hidden>
+      <section class="card" aria-labelledby="stats-title">
+        <h2 id="stats-title">Podsumowanie</h2>
+        <ul id="stats" class="stats"></ul>
+      </section>
+
+      <section class="card">
+        <label class="switch">
+          <input type="checkbox" id="open-toggle">
+          <span>Rejestracja otwarta dla uczestników</span>
+        </label>
+        <p id="open-status" class="hint" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="filters-title">
+        <h2 id="filters-title">Wyszukiwanie i filtry</h2>
+        <form id="filters" class="filters">
+          <label class="field">
+            <span>Szukaj</span>
+            <input id="f-q" name="q" type="search" placeholder="imię, instytucja, e-mail, miejscowość">
+          </label>
+          <label class="field">
+            <span>Rodzaj</span>
+            <select id="f-type" name="type">
+              <option value="">wszystkie</option>
+              <option value="uczestnik">Uczestnik</option>
+              <option value="prelegent">Prelegent / moderator</option>
+              <option value="partner">Partner / wystawca</option>
+              <option value="media">Przedstawiciel mediów</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="f-status" name="status">
+              <option value="">wszystkie</option>
+              <option value="nowe">nowe</option>
+              <option value="potwierdzone">potwierdzone</option>
+              <option value="anulowane">anulowane</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Od</span>
+            <input id="f-from" name="from" type="date">
+          </label>
+          <label class="field">
+            <span>Do</span>
+            <input id="f-to" name="to" type="date">
+          </label>
+          <div class="filters__actions">
+            <button class="btn" type="submit">Filtruj</button>
+            <button class="btn btn--ghost" type="reset">Wyczyść</button>
+            <button class="btn btn--ghost" type="button" id="export">Eksport CSV (Excel)</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="list-title">
+        <h2 id="list-title">Lista zgłoszeń <span id="total" class="hint"></span></h2>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data</th>
+                <th scope="col">Imię i nazwisko</th>
+                <th scope="col">Instytucja / firma</th>
+                <th scope="col">Kontakt</th>
+                <th scope="col">Rodzaj</th>
+                <th scope="col">Status</th>
+                <th scope="col">Akcje</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p id="list-status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <details>
+          <summary>Treści wiadomości e-mail wysyłanych automatycznie</summary>
+          <p class="hint">Znaczniki: <code>{{name}}</code>, <code>{{organization}}</code>, <code>{{email}}</code>, <code>{{date}}</code>, <code>{{place}}</code>, <code>{{type_label}}</code>, <code>{{id}}</code>, <code>{{contact_email}}</code>, <code>{{contact_phone}}</code>.</p>
+          <form id="templates" class="templates">
+            <label class="field">
+              <span>Potwierdzenie — temat</span>
+              <input id="t-confirm-subject" type="text">
+            </label>
+            <label class="field">
+              <span>Potwierdzenie — treść</span>
+              <textarea id="t-confirm-body" rows="10"></textarea>
+            </label>
+            <label class="field">
+              <span>Powiadomienie organizatora — temat</span>
+              <input id="t-admin-subject" type="text">
+            </label>
+            <label class="field">
+              <span>Powiadomienie organizatora — treść</span>
+              <textarea id="t-admin-body" rows="10"></textarea>
+            </label>
+            <button class="btn" type="submit">Zapisz treści</button>
+            <p id="template-status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="edit-dialog" aria-labelledby="edit-title">
+    <form id="edit-form" method="dialog">
+      <h2 id="edit-title">Edycja zgłoszenia</h2>
+      <input type="hidden" id="e-id">
+      <div class="grid">
+        <label class="field"><span>Imię i nazwisko</span><input id="e-name" type="text" required></label>
+        <label class="field"><span>Instytucja / firma</span><input id="e-organization" type="text" required></label>
+        <label class="field"><span>Stanowisko</span><input id="e-position" type="text"></label>
+        <label class="field"><span>E-mail</span><input id="e-email" type="email" required></label>
+        <label class="field"><span>Telefon</span><input id="e-phone" type="tel" required></label>
+        <label class="field"><span>Miejscowość</span><input id="e-city" type="text"></label>
+        <label class="field">
+          <span>Rodzaj</span>
+          <select id="e-type">
+            <option value="uczestnik">Uczestnik</option>
+            <option value="prelegent">Prelegent / moderator</option>
+            <option value="partner">Partner / wystawca</option>
+            <option value="media">Przedstawiciel mediów</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Status</span>
+          <select id="e-status">
+            <option value="nowe">nowe</option>
+            <option value="potwierdzone">potwierdzone</option>
+            <option value="anulowane">anulowane</option>
+          </select>
+        </label>
+      </div>
+      <label class="field"><span>Dodatkowe informacje</span><textarea id="e-notes" rows="3"></textarea></label>
+      <label class="switch"><input type="checkbox" id="e-consent-contact"><span>Zgoda na kontakt informacyjny</span></label>
+      <p id="edit-status" class="status" role="status" aria-live="polite"></p>
+      <div class="dialog-actions">
+        <button class="btn" type="submit">Zapisz zmiany</button>
+        <button class="btn btn--ghost" type="button" id="edit-cancel">Anuluj</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/admin/app.js"></script>
+</body>
+</html>

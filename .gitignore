@@ -11,3 +11,7 @@
 # Logi i pliki tymczasowe
 *.log
 *.tmp
+
+# Prototyp modułu rejestracji — dane lokalne
+server/var/
+server/node_modules/
