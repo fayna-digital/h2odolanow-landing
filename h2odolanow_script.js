@@ -4,9 +4,11 @@
 (function () {
   'use strict';
 
-  var MOBILE_QUERY = '(max-width: 768px)';
+  var MOBILE_QUERY = '(max-width: 991px)';
+  var header = null;
 
   document.addEventListener('DOMContentLoaded', function () {
+    header = document.querySelector('.site-header');
     initNavigation();
     initHeaderShadow();
     initFormValidation();
@@ -21,15 +23,19 @@
 
     function open() {
       nav.classList.add('is-open');
+      if (header) header.classList.add('is-nav-open');
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Zamknij menu nawigacyjne');
+      syncHeader();
     }
 
     function close(returnFocus) {
       nav.classList.remove('is-open');
+      if (header) header.classList.remove('is-nav-open');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Otwórz menu nawigacyjne');
       if (returnFocus) toggle.focus();
+      syncHeader();
     }
 
     toggle.addEventListener('click', function () {
@@ -65,15 +71,18 @@
     }
   }
 
-  function initHeaderShadow() {
-    var header = document.querySelector('.site-header');
+  // Nagłówek jest przezroczysty nad zdjęciem hero i zmienia się w biały pasek
+  // po przewinięciu (lub gdy otwarte jest menu mobilne).
+  function syncHeader() {
     if (!header) return;
+    var isOpen = header.classList.contains('is-nav-open');
+    header.classList.toggle('is-solid', isOpen || window.scrollY > 40);
+  }
 
-    function update() {
-      header.classList.toggle('is-scrolled', window.scrollY > 8);
-    }
-    update();
-    window.addEventListener('scroll', update, { passive: true });
+  function initHeaderShadow() {
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+    window.addEventListener('resize', syncHeader);
   }
 
   /* --------------------------------------------------------------- form */

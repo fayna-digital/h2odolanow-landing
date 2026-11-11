@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>H2Odolanów – Konferencja o energetyce i transformacji energetycznej</title>
   <meta name="description" content="H2Odolanów – ogólnopolska konferencja o energetyce i transformacji energetycznej. Program, prelegenci, miejsce, organizatorzy i rejestracja uczestników.">
-  <meta name="author" content="Gmina Odolanów">
+  <meta name="author" content="Gmina i Miasto Odolanów">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0b6e4f">
+  <meta name="theme-color" content="#2e2e2e">
   <meta property="og:title" content="H2Odolanów – Konferencja o energetyce i transformacji energetycznej">
   <meta property="og:description" content="Ogólnopolska konferencja o energetyce i transformacji energetycznej.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://odolanow.pl/konferencja/">
   <meta property="og:locale" content="pl_PL">
+  <link rel="icon" href="assets/logo-odolanow.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="h2odolanow_style.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="site-logo">H2Odolanów</a>
+      <a href="#hero" class="brand">H2<strong>Odolanów</strong></a>
 
       <nav class="site-nav" id="main-nav" aria-label="Nawigacja główna">
         <ul class="nav-list">
@@ -45,34 +49,46 @@
 
   <main id="main-content">
     <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
+      <div class="hero__bg" aria-hidden="true"
+           style="background-image: url('assets/hero-odolanow.jpg')"></div>
+
+      <div class="container hero__inner">
+        <img class="hero__logo" src="assets/logo-odolanow.png" width="370" height="196"
+             alt="Herb Gminy i Miasta Odolanów">
+
         <!-- CONTENT: kicker -->
-        <p class="hero-kicker">Konferencja o energetyce</p>
-        <h1 id="hero-title">H2Odolanów</h1>
-        <!-- CONTENT: tagline -->
-        <p class="hero-tagline">Energetyka i transformacja energetyczna – wiedza, inspiracja, działanie</p>
-        <!-- CONTENT: date and place -->
-        <p class="hero-date">
-          <time datetime="2026">2026</time> · Odolanów
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#rejestracja">Zarejestruj się</a>
-          <a class="btn btn-outline" href="#program">Sprawdź program</a>
+        <p class="hero__kicker">Konferencja o energetyce i transformacji energetycznej</p>
+
+        <h1 id="hero-title" class="hero__title">H2<strong>Odolanów</strong></h1>
+
+        <!-- CONTENT: termin i miejsce -->
+        <p class="hero__date"><time datetime="2026">2026</time> &middot; Odolanów</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#rejestracja">Zarejestruj się</a>
+          <a class="btn btn--ghost" href="#program">Sprawdź program</a>
         </div>
       </div>
+
+      <a class="hero__goto" href="#o-konferencji">
+        <svg viewBox="0 0 32 18" aria-hidden="true" focusable="false">
+          <path d="M2 2l14 14L30 2" fill="none" stroke="currentColor" stroke-width="3"></path>
+        </svg>
+        <span>Przejdź do strony</span>
+      </a>
     </section>
 
     <section id="o-konferencji" class="section" aria-labelledby="o-konferencji-title">
       <div class="container">
         <h2 id="o-konferencji-title">O konferencji</h2>
-        <!-- CONTENT: 2–3 akapity o celu konferencji, tematyce, odbiorcach -->
+        <!-- CONTENT: 2–3 akapity o celu konferencji, tematyce i odbiorcach -->
         <div class="prose">
           <p>Treść do uzupełnienia.</p>
         </div>
       </div>
     </section>
 
-    <section id="w-powitanie-burmistrza" class="section section-alt" aria-labelledby="powitanie-burmistrza-title">
+    <section id="w-powitanie-burmistrza" class="section section--dark" aria-labelledby="powitanie-burmistrza-title">
       <div class="container">
         <h2 id="powitanie-burmistrza-title">Powitanie Burmistrza</h2>
         <!-- CONTENT: list powitalny + podpis (imię, nazwisko, funkcja) -->
@@ -85,38 +101,76 @@
     <section id="program" class="section" aria-labelledby="program-title">
       <div class="container">
         <h2 id="program-title">Program</h2>
-        <!-- CONTENT: lista sesji w formacie <ol class="agenda"> -->
-        <div class="prose">
-          <p>Program zostanie ogłoszony wkrótce.</p>
-        </div>
+        <!-- CONTENT: lista sesji; wzór wiersza:
+             <li class="agenda__item">
+               <span class="agenda__time">09:00</span>
+               <div>
+                 <p class="agenda__title">Tytuł wystąpienia</p>
+                 <p class="agenda__meta">Imię Nazwisko · Afiliacja</p>
+               </div>
+             </li>
+        -->
+        <ul class="agenda">
+          <li class="agenda__item">
+            <span class="agenda__time">—</span>
+            <div>
+              <p class="agenda__title">Program zostanie ogłoszony wkrótce.</p>
+              <p class="agenda__meta">Godziny, tematy i prelegenci w przygotowaniu.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="prelegenci" class="section section-alt" aria-labelledby="prelegenci-title">
+    <section id="prelegenci" class="section" aria-labelledby="prelegenci-title">
       <div class="container">
         <h2 id="prelegenci-title">Prelegenci</h2>
-        <!-- CONTENT: siatka kart <ul class="speaker-list"> z imieniem, afiliacją i tematem -->
-        <div class="prose">
-          <p>Lista prelegentów zostanie ogłoszona wkrótce.</p>
-        </div>
+        <!-- CONTENT: karta prelegenta; wzór:
+             <li class="speaker">
+               <div class="speaker__photo" aria-hidden="true"><svg>…</svg></div>
+               <div class="speaker__body">
+                 <h3>Imię Nazwisko</h3>
+                 <p class="speaker__role">Afiliacja</p>
+                 <p class="speaker__topic">Temat wystąpienia</p>
+               </div>
+             </li>
+        -->
+        <ul class="speaker-grid">
+          <li class="speaker">
+            <div class="speaker__photo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+              </svg>
+            </div>
+            <div class="speaker__body">
+              <h3>Lista prelegentów</h3>
+              <p class="speaker__role">Zostanie ogłoszona wkrótce.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section id="miejsce" class="section" aria-labelledby="miejsce-title">
       <div class="container">
         <h2 id="miejsce-title">Miejsce</h2>
-        <!-- CONTENT: nazwa obiektu, adres, dojazd, plan sali -->
-        <div class="prose">
-          <p>Treść do uzupełnienia.</p>
+        <div class="place">
+          <div class="prose">
+            <!-- CONTENT: nazwa obiektu, adres, dojazd, parking -->
+            <p>Treść do uzupełnienia.</p>
+          </div>
+          <!-- CONTENT: zastąpić blok mapą (np. Google Maps embed) -->
+          <div class="map-placeholder">Mapa dojazdu do uzupełnienia</div>
         </div>
       </div>
     </section>
 
-    <section id="organizatorzy" class="section section-alt" aria-labelledby="organizatorzy-title">
+    <section id="organizatorzy" class="section" aria-labelledby="organizatorzy-title">
       <div class="container">
         <h2 id="organizatorzy-title">Organizatorzy, partnerzy i patronaty</h2>
-        <!-- CONTENT: listy organizatorów, partnerów i patronów (logo + nazwa + link) -->
-        <ul class="organizer-list">
+        <!-- CONTENT: logotypy lub nazwy organizatorów, partnerów i patronów -->
+        <ul class="org-grid">
           <li>Treść do uzupełnienia.</li>
         </ul>
       </div>
@@ -126,65 +180,92 @@
       <div class="container">
         <h2 id="rejestracja-title">Formularz rejestracji</h2>
 
-        <form id="registration-form" class="registration-form" action="#" method="post" novalidate>
-          <div class="form-row">
+        <div class="form-card">
+          <form id="registration-form" class="registration-form" action="#" method="post" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="reg-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
+                <input type="text" id="reg-name" name="name" autocomplete="name"
+                       required aria-required="true">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="reg-email">Adres e-mail <span aria-hidden="true">*</span></label>
+                <input type="email" id="reg-email" name="email" autocomplete="email"
+                       required aria-required="true">
+              </div>
+              <div class="form-field">
+                <label for="reg-phone">Telefon</label>
+                <input type="tel" id="reg-phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+
             <div class="form-field">
-              <label for="reg-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
-              <input type="text" id="reg-name" name="name" autocomplete="name"
+              <label for="reg-organization">Organizacja</label>
+              <input type="text" id="reg-organization" name="organization" autocomplete="organization">
+            </div>
+
+            <div class="form-field form-field--checkbox">
+              <input type="checkbox" id="reg-consent-rodo" name="consent_rodo"
                      required aria-required="true">
+              <label for="reg-consent-rodo">Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z RODO <span aria-hidden="true">*</span></label>
+              <p class="hint" id="reg-consent-rodo-hint">Administratorem danych jest Gmina i Miasto Odolanów. Szczegóły w polityce prywatności.</p>
             </div>
-          </div>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="reg-email">Adres e-mail <span aria-hidden="true">*</span></label>
-              <input type="email" id="reg-email" name="email" autocomplete="email"
-                     required aria-required="true">
+            <div class="form-field form-field--checkbox">
+              <input type="checkbox" id="reg-consent-marketing" name="consent_marketing">
+              <label for="reg-consent-marketing">Wyrażam zgodę na otrzymywanie korespondencji marketingowej</label>
             </div>
-            <div class="form-field">
-              <label for="reg-phone">Telefon</label>
-              <input type="tel" id="reg-phone" name="phone" autocomplete="tel">
-            </div>
-          </div>
 
-          <div class="form-field">
-            <label for="reg-organization">Organizacja</label>
-            <input type="text" id="reg-organization" name="organization" autocomplete="organization">
-          </div>
+            <button class="btn btn--primary" type="submit">Zarejestruj się</button>
 
-          <div class="form-field form-field--checkbox">
-            <input type="checkbox" id="reg-consent-rodo" name="consent_rodo"
-                   required aria-required="true">
-            <label for="reg-consent-rodo">Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z RODO <span aria-hidden="true">*</span></label>
-            <p class="hint" id="reg-consent-rodo-hint">Administratorem danych jest Gmina Odolanów. Szczegóły w polityce prywatności.</p>
-          </div>
-
-          <div class="form-field form-field--checkbox">
-            <input type="checkbox" id="reg-consent-marketing" name="consent_marketing">
-            <label for="reg-consent-marketing">Wyrażam zgodę na otrzymywanie korespondencji marketingowej</label>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Zarejestruj się</button>
-
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
     <section id="kontakt" class="section" aria-labelledby="kontakt-title">
       <div class="container">
         <h2 id="kontakt-title">Kontakt</h2>
-        <!-- CONTENT: osoba kontaktowa, e-mail, telefon, adres urzędu -->
-        <address class="prose">
-          <p>Treść do uzupełnienia.</p>
+        <!-- CONTENT: dane osoby kontaktowej / urzędu -->
+        <address>
+          <ul class="contact-list">
+            <li><span class="label">E-mail</span><span>—</span></li>
+            <li><span class="label">Telefon</span><span>—</span></li>
+            <li><span class="label">Adres</span><span>—</span></li>
+          </ul>
         </address>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" id="footer">
-    <div class="container">
-      <p>© 2026 H2Odolanów. Wszelkie prawa zastrzeżone.</p>
+    <div class="footer-links">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#o-konferencji">O konferencji</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#prelegenci">Prelegenci</a></li>
+          <li><a href="#rejestracja">Rejestracja</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <div class="container footer-info__inner">
+        <img src="assets/logo-odolanow.png" width="370" height="196" alt="">
+        <p>Konferencja H2Odolanów &middot; Gmina i Miasto Odolanów, ul. Rynek 1, 63-430 Odolanów</p>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      <div class="container">
+        <p>&copy; 2026 H2Odolanów. Wszelkie prawa zastrzeżone.</p>
+      </div>
     </div>
   </footer>
 
