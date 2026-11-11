@@ -1,270 +1,974 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>H2Odolanów – Konferencja o energetyce i transformacji energetycznej</title>
-  <meta name="description" content="H2Odolanów – ogólnopolska konferencja o energetyce i transformacji energetycznej. Program, prelegenci, miejsce, organizatorzy i rejestracja uczestników.">
+
+  <title>H2Odolanów 2027 – ogólnopolska konferencja o energetyce | 27–28 kwietnia 2027</title>
+  <meta name="description" content="H2Odolanów – ogólnopolska konferencja o nowoczesnej energetyce, OZE, magazynowaniu energii i technologiach wodorowych. 27–28 kwietnia 2027 r., Klaster Energii Odolanów–Przygodzice–Sulmierzyce.">
   <meta name="author" content="Gmina i Miasto Odolanów">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#2e2e2e">
-  <meta property="og:title" content="H2Odolanów – Konferencja o energetyce i transformacji energetycznej">
-  <meta property="og:description" content="Ogólnopolska konferencja o energetyce i transformacji energetycznej.">
+  <meta name="theme-color" content="#0c1b2a">
+
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://odolanow.pl/konferencja/">
   <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="H2Odolanów">
+  <meta property="og:title" content="H2Odolanów 2027 – ogólnopolska konferencja o energetyce">
+  <meta property="og:description" content="27–28 kwietnia 2027 r., Klaster Energii Odolanów–Przygodzice–Sulmierzyce. OZE, magazynowanie energii, technologie wodorowe, transformacja energetyczna samorządów.">
+  <meta property="og:image" content="assets/hero-energy.jpg">
+  <meta property="og:url" content="https://www.odolanow.pl/h2odolanow">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" href="assets/logo-odolanow.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="h2odolanow_style.css">
+
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "H2Odolanów 2027 – ogólnopolska konferencja o energetyce",
+    "startDate": "2027-04-27T09:00:00+02:00",
+    "endDate": "2027-04-28T16:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "description": "Ogólnopolska konferencja poświęcona nowoczesnej energetyce, odnawialnym źródłom energii, magazynowaniu energii i technologiom wodorowym.",
+    "location": {
+      "@type": "Place",
+      "name": "Klaster Energii Odolanów–Przygodzice–Sulmierzyce",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Odolanów",
+        "postalCode": "63-430",
+        "addressRegion": "wielkopolskie",
+        "addressCountry": "PL"
+      }
+    },
+    "organizer": {
+      "@type": "GovernmentOrganization",
+      "name": "Gmina i Miasto Odolanów",
+      "url": "https://www.odolanow.pl/"
+    },
+    "image": ["assets/hero-energy.jpg"],
+    "isAccessibleForFree": true
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
 
+  <!-- ============================================================ TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__meta">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+        <strong>27–28 kwietnia 2027</strong>
+        <span class="topbar__sep" aria-hidden="true"></span>
+        <span>Odolanów · Klaster Energii</span>
+      </p>
+      <p class="topbar__links">
+        <a href="#rejestracja">Rejestracja uczestników</a>
+        <a href="#kontakt">Kontakt</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================================ HEADER -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="brand">H2<strong>Odolanów</strong></a>
+      <a class="brand" href="#start" aria-label="H2Odolanów – strona główna konferencji">
+        <img class="brand__mark" src="assets/logo-odolanow.png" width="156" height="195" alt="">
+        <span class="brand__text">
+          <span class="brand__name">H<sub>2</sub>Odolanów</span>
+          <span class="brand__tag">Konferencja · 2027</span>
+        </span>
+      </a>
 
       <nav class="site-nav" id="main-nav" aria-label="Nawigacja główna">
         <ul class="nav-list">
           <li><a href="#o-konferencji">O konferencji</a></li>
+          <li><a href="#tematyka">Tematyka</a></li>
           <li><a href="#program">Program</a></li>
           <li><a href="#prelegenci">Prelegenci</a></li>
           <li><a href="#miejsce">Miejsce</a></li>
           <li><a href="#organizatorzy">Organizatorzy</a></li>
-          <li><a href="#rejestracja">Rejestracja</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
+        <a class="btn btn--primary btn--block nav-cta" href="#rejestracja">Zarejestruj się</a>
       </nav>
 
+      <a class="btn btn--primary btn--sm header-cta" href="#rejestracja">Zarejestruj się</a>
+
       <button class="nav-toggle" type="button" id="nav-toggle"
-              aria-expanded="false" aria-controls="main-nav"
-              aria-label="Otwórz menu nawigacyjne">
-        <span class="nav-toggle-icon" aria-hidden="true"></span>
+              aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
         <span class="visually-hidden">Menu</span>
       </button>
     </div>
   </header>
 
   <main id="main-content">
-    <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"
-           style="background-image: url('assets/hero-odolanow.jpg')"></div>
+
+    <!-- ============================================================= HERO -->
+    <section class="hero" id="start" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/hero-energy.jpg" alt="" width="1600" height="1155" fetchpriority="high"
+             srcset="assets/hero-energy-800.jpg 800w, assets/hero-energy-1200.jpg 1200w, assets/hero-energy.jpg 1600w"
+             sizes="100vw">
+      </div>
 
       <div class="container hero__inner">
-        <img class="hero__logo" src="assets/logo-odolanow.png" width="370" height="196"
-             alt="Herb Gminy i Miasta Odolanów">
+        <p class="kicker">Konferencja ogólnopolska</p>
 
-        <!-- CONTENT: kicker -->
-        <p class="hero__kicker">Konferencja o energetyce i transformacji energetycznej</p>
+        <h1 class="hero__title" id="hero-title">H<sub>2</sub>Odolanów</h1>
 
-        <h1 id="hero-title" class="hero__title">H2<strong>Odolanów</strong></h1>
+        <!-- CONTENT: hasło przewodnie konferencji -->
+        <p class="hero__claim">Energia, która zostaje w regionie.</p>
 
-        <!-- CONTENT: termin i miejsce -->
-        <p class="hero__date"><time datetime="2026">2026</time> &middot; Odolanów</p>
+        <p class="hero__lead">
+          Dwa dni o nowoczesnej energetyce: odnawialne źródła, magazynowanie energii,
+          technologie wodorowe i transformacja energetyczna samorządów.
+        </p>
+
+        <ul class="hero__meta">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+            <span><strong>27–28 kwietnia 2027</strong></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            <span>Klaster Energii Odolanów–Przygodzice–Sulmierzyce</span>
+          </li>
+        </ul>
 
         <div class="hero__actions">
           <a class="btn btn--primary" href="#rejestracja">Zarejestruj się</a>
-          <a class="btn btn--ghost" href="#program">Sprawdź program</a>
+          <a class="btn btn--light" href="#program">Program konferencji</a>
+          <a class="btn btn--outline" href="#o-konferencji">O konferencji</a>
         </div>
-      </div>
 
-      <a class="hero__goto" href="#o-konferencji">
-        <svg viewBox="0 0 32 18" aria-hidden="true" focusable="false">
-          <path d="M2 2l14 14L30 2" fill="none" stroke="currentColor" stroke-width="3"></path>
-        </svg>
-        <span>Przejdź do strony</span>
-      </a>
-    </section>
-
-    <section id="o-konferencji" class="section" aria-labelledby="o-konferencji-title">
-      <div class="container">
-        <h2 id="o-konferencji-title">O konferencji</h2>
-        <!-- CONTENT: 2–3 akapity o celu konferencji, tematyce i odbiorcach -->
-        <div class="prose">
-          <p>Treść do uzupełnienia.</p>
+        <div class="countdown" id="countdown" hidden>
+          <p class="countdown__label">Do rozpoczęcia konferencji</p>
+          <div class="countdown__grid" role="timer" aria-live="off">
+            <div class="countdown__cell"><span class="countdown__value" data-unit="days">—</span><span class="countdown__unit">dni</span></div>
+            <div class="countdown__cell"><span class="countdown__value" data-unit="hours">—</span><span class="countdown__unit">godz.</span></div>
+            <div class="countdown__cell"><span class="countdown__value" data-unit="minutes">—</span><span class="countdown__unit">min</span></div>
+            <div class="countdown__cell"><span class="countdown__value" data-unit="seconds">—</span><span class="countdown__unit">sek.</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="w-powitanie-burmistrza" class="section section--dark" aria-labelledby="powitanie-burmistrza-title">
-      <div class="container">
-        <h2 id="powitanie-burmistrza-title">Powitanie Burmistrza</h2>
-        <!-- CONTENT: list powitalny + podpis (imię, nazwisko, funkcja) -->
-        <div class="prose">
-          <p>Treść do uzupełnienia.</p>
+    <!-- ==================================================== LOGO STRIP -->
+    <section class="strip" aria-label="Organizatorzy i dofinansowanie">
+      <div class="container strip__inner">
+        <div class="strip__group">
+          <p class="strip__label">Organizatorzy</p>
+          <ul class="strip__items">
+            <li class="strip__item">
+              <img src="assets/logo-odolanow.png" width="156" height="195" alt="">
+              <span>Gmina i Miasto<br>Odolanów</span>
+            </li>
+            <li class="strip__item"><span>Gmina<br>Przygodzice</span></li>
+            <li class="strip__item"><span>Gmina<br>Sulmierzyce</span></li>
+          </ul>
+        </div>
+        <div class="strip__group">
+          <p class="strip__label">Dofinansowanie</p>
+          <ul class="strip__items">
+            <li class="strip__item"><span>Krajowy Plan<br>Odbudowy</span></li>
+            <li class="strip__item"><span>Ministerstwo Klimatu<br>i Środowiska</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="program" class="section" aria-labelledby="program-title">
+    <!-- =================================================== O KONFERENCJI -->
+    <section class="section" id="o-konferencji" aria-labelledby="o-konferencji-title">
+      <div class="container split">
+        <div class="split__body reveal">
+          <p class="eyebrow">O konferencji</p>
+          <h2 class="section-title" id="o-konferencji-title">
+            Ogólnopolskie spotkanie o energii, która powstaje lokalnie
+          </h2>
+
+          <!-- CONTENT: 2–4 akapity o idei, celach i znaczeniu konferencji -->
+          <div class="prose">
+            <p>
+              H<sub>2</sub>Odolanów to ogólnopolska konferencja poświęcona nowoczesnej energetyce,
+              odnawialnym źródłom energii i transformacji energetycznej. Spotykamy się na terenie
+              Klastra Energii Odolanów–Przygodzice–Sulmierzyce, aby pokazać, jak lokalne społeczności
+              mogą realnie zmieniać krajobraz energetyczny Polski.
+            </p>
+            <p>
+              Klaster zrzesza trzy gminy z południa Wielkopolski, które wspólnie pozyskały
+              50 mln zł z Krajowego Planu Odbudowy na instalacje fotowoltaiczne, magazyny energii
+              i magazyn wodorowy w Odolanowie. To jeden z niewielu w kraju programów, w którym
+              mieszkańcy nie muszą wykładać własnych środków, a większość kosztów pokrywa gmina.
+            </p>
+            <p>
+              Konferencja łączy perspektywę samorządów, przedsiębiorstw i nauki: pokazuje wdrożenia,
+              modele finansowania i codzienną eksploatację instalacji — bez teoretyzowania.
+            </p>
+          </div>
+
+          <ul class="ticks">
+            <li>Dwa dni obrad, sesje plenarne, panele i warsztaty</li>
+            <li>Samorządy, energetyka, biznes i nauka w jednym miejscu</li>
+            <li>Praktyka: wdrożenia, finansowanie, eksploatacja, bezpieczeństwo</li>
+            <li>Wydarzenie towarzyszące: prezentacja autobusu demonstracyjnego</li>
+          </ul>
+        </div>
+
+        <figure class="media reveal">
+          <img src="assets/about-energy.jpg" width="1600" height="1200" alt="Farma fotowoltaiczna w Polsce – rzędy paneli słonecznych na tle pól" loading="lazy"
+               srcset="assets/about-energy-800.jpg 800w, assets/about-energy-1200.jpg 1200w, assets/about-energy.jpg 1600w"
+               sizes="(min-width: 960px) 46vw, 92vw">
+          <figcaption class="media__tag">OZE w praktyce</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================================================= POWITANIE -->
+    <section class="section section--ink" id="powitanie" aria-labelledby="powitanie-title">
+      <div class="container quote">
+        <figure class="quote__photo reveal">
+          <!-- CONTENT: fotografia Burmistrza (podmienić plik) -->
+          <div class="photo-slot photo-slot--portrait" role="img" aria-label="Miejsce na fotografię Burmistrza Gminy i Miasta Odolanów">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+            <span>Fotografia Burmistrza<br>do uzupełnienia</span>
+          </div>
+        </figure>
+
+        <div class="quote__body reveal">
+          <p class="eyebrow eyebrow--amber">Powitanie Burmistrza</p>
+          <h2 class="section-title" id="powitanie-title">Zaproszenie do Odolanowa</h2>
+
+          <!-- CONTENT: pełny tekst powitalny Burmistrza -->
+          <blockquote class="quote__text">
+            <p>
+              „Będziemy przekazywać, jak w sposób ekologiczny i ekonomiczny pozyskiwać prąd,
+              jak fachowo rozwiązywać różne problemy z fotowoltaiką i co ona nam finalnie daje.
+              A wszystko to podczas spotkań z ekspertami od energii odnawialnej.”
+            </p>
+            <footer>
+              <strong>Marcin Szorski</strong>
+              <span>Burmistrz Gminy i Miasta Odolanów</span>
+            </footer>
+          </blockquote>
+
+          <p class="quote__note">
+            Zapraszamy do udziału w konferencji przedstawicieli samorządów, przedsiębiorstw,
+            instytucji finansowych i środowiska naukowego.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= TEMATYKA -->
+    <section class="section section--mist" id="tematyka" aria-labelledby="tematyka-title">
       <div class="container">
-        <h2 id="program-title">Program</h2>
-        <!-- CONTENT: lista sesji; wzór wiersza:
-             <li class="agenda__item">
-               <span class="agenda__time">09:00</span>
-               <div>
-                 <p class="agenda__title">Tytuł wystąpienia</p>
-                 <p class="agenda__meta">Imię Nazwisko · Afiliacja</p>
-               </div>
-             </li>
-        -->
-        <ul class="agenda">
-          <li class="agenda__item">
-            <span class="agenda__time">—</span>
-            <div>
-              <p class="agenda__title">Program zostanie ogłoszony wkrótce.</p>
-              <p class="agenda__meta">Godziny, tematy i prelegenci w przygotowaniu.</p>
-            </div>
+        <div class="section-head">
+          <p class="eyebrow">Zakres tematyczny</p>
+          <h2 class="section-title" id="tematyka-title">O czym będziemy rozmawiać</h2>
+          <p class="lead">
+            Technologie wodorowe są ważnym, ale nie jedynym obszarem konferencji.
+            Program obejmuje cały łańcuch transformacji energetycznej — od wytwarzania po finansowanie.
+          </p>
+        </div>
+
+        <!-- CONTENT: karty tematyczne – tytuły i opisy można edytować -->
+        <ul class="topic-grid">
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path></svg>
+            </span>
+            <h3>Odnawialne źródła energii</h3>
+            <p>Rozwój OZE w gminach, potencjał lokalny i realne efekty wdrożeń.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v9H3zM8 15v5M16 15v5M3 19h18"></path><path d="M7 10h3M13 10h4"></path></svg>
+            </span>
+            <h3>Fotowoltaika</h3>
+            <p>Instalacje dachowe i gruntowe, projektowanie, montaż i eksploatacja.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="15" height="10" rx="1"></rect><path d="M18 10h2v4h-2M6 10v4M9 10v4"></path></svg>
+            </span>
+            <h3>Magazynowanie energii</h3>
+            <p>Magazyny bateryjne, systemy zarządzania energią i stabilizacja sieci.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="7" cy="14" r="3"></circle><circle cx="17" cy="14" r="3"></circle><path d="M10 14h4M12 4v6M9 6h6"></path></svg>
+            </span>
+            <h3>Technologie wodorowe</h3>
+            <p>Zielony wodór, magazyn wodorowy w Odolanowie i gospodarka wodorowa.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"></path></svg>
+            </span>
+            <h3>Klastry energii</h3>
+            <p>Energetyka rozproszona, współpraca gmin i lokalne systemy energetyczne.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"></path><path d="M12 18l4-6"></path><circle cx="12" cy="18" r="1.5"></circle></svg>
+            </span>
+            <h3>Efektywność energetyczna</h3>
+            <p>Nowoczesne systemy zarządzania energią i innowacyjne rozwiązania technologiczne.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13"></path><path d="M9 21v-5h6v5M9 11h2M13 11h2"></path></svg>
+            </span>
+            <h3>Samorządy i przedsiębiorstwa</h3>
+            <p>Transformacja energetyczna jednostek publicznych i firm.</p>
+          </li>
+          <li class="topic reveal">
+            <span class="topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M3 21h18"></path><path d="M20 7l-4-3M20 7l-1 5"></path></svg>
+            </span>
+            <h3>Inwestycje i finansowanie</h3>
+            <p>KPO, środki krajowe, współpraca sektora publicznego i prywatnego.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="prelegenci" class="section" aria-labelledby="prelegenci-title">
+    <!-- ========================================================== LICZBY -->
+    <section class="section section--ink stats-section" id="projekt" aria-labelledby="projekt-title">
       <div class="container">
-        <h2 id="prelegenci-title">Prelegenci</h2>
-        <!-- CONTENT: karta prelegenta; wzór:
-             <li class="speaker">
-               <div class="speaker__photo" aria-hidden="true"><svg>…</svg></div>
-               <div class="speaker__body">
-                 <h3>Imię Nazwisko</h3>
-                 <p class="speaker__role">Afiliacja</p>
-                 <p class="speaker__topic">Temat wystąpienia</p>
-               </div>
-             </li>
-        -->
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow eyebrow--amber">Klaster Energii</p>
+            <h2 class="section-title" id="projekt-title">Trzy gminy, wspólna energia</h2>
+          </div>
+          <p class="section-head__aside">
+            Konferencja odbywa się w miejscu, w którym ten projekt dzieje się naprawdę.
+          </p>
+        </div>
+
+        <ul class="stats">
+          <li class="stat reveal">
+            <span class="stat__value">50 <span>mln zł</span></span>
+            <span class="stat__label">dofinansowanie z KPO</span>
+          </li>
+          <li class="stat reveal">
+            <span class="stat__value">3</span>
+            <span class="stat__label">gminy w klastrze</span>
+          </li>
+          <li class="stat reveal">
+            <span class="stat__value">600+</span>
+            <span class="stat__label">instalacji fotowoltaicznych</span>
+          </li>
+          <li class="stat reveal">
+            <span class="stat__value">400+</span>
+            <span class="stat__label">magazynów energii</span>
+          </li>
+          <li class="stat reveal">
+            <span class="stat__value">90%</span>
+            <span class="stat__label">kosztów pokrywa gmina</span>
+          </li>
+        </ul>
+
+        <p class="stats__note">
+          Źródło: Gmina i Miasto Odolanów, program „Trzy Gminy – Wspólna Energia”.
+          Liczby instalacji dotyczą gminy Odolanów i mogą ulec aktualizacji wraz z postępem realizacji.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= PROGRAM -->
+    <section class="section" id="program" aria-labelledby="program-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow">Program</p>
+            <h2 class="section-title" id="program-title">Dwa dni, cztery bloki tematyczne</h2>
+            <p class="lead">
+              Program w wersji roboczej — godziny, tytuły wystąpień i prelegenci zostaną
+              potwierdzeni i opublikowani przed rozpoczęciem rejestracji.
+            </p>
+          </div>
+          <p class="section-head__action">
+            <a class="btn btn--outline-dark btn--sm" href="#" aria-disabled="true" data-pdf-download>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"></path></svg>
+              Pobierz program (PDF)
+            </a>
+          </p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Dni konferencji">
+          <button class="tab" type="button" id="tab-day1" role="tab" aria-selected="true" aria-controls="panel-day1">
+            Dzień I <span>27 kwietnia 2027</span>
+          </button>
+          <button class="tab" type="button" id="tab-day2" role="tab" aria-selected="false" aria-controls="panel-day2" tabindex="-1">
+            Dzień II <span>28 kwietnia 2027</span>
+          </button>
+        </div>
+
+        <!-- CONTENT: program – dodawać, usuwać i edytować wiersze; wzór niżej -->
+        <div class="tab-panel" id="panel-day1" role="tabpanel" aria-labelledby="tab-day1" tabindex="0">
+          <ul class="agenda">
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">09:00</span>
+              <div class="agenda__main"><h3>Rejestracja uczestników, kawa powitalna</h3></div>
+              <span class="badge badge--gray">Rejestracja</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">09:30</span>
+              <div class="agenda__main">
+                <h3>Otwarcie konferencji</h3>
+                <p class="agenda__meta">Organizatorzy · przedstawiciele trzech gmin klastra</p>
+              </div>
+              <span class="badge">Sesja</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">10:00</span>
+              <div class="agenda__main">
+                <h3>Sesja plenarna: transformacja energetyczna Polski</h3>
+                <p class="agenda__meta">Perspektywa krajowa i lokalna</p>
+              </div>
+              <span class="badge">Sesja</span>
+            </li>
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">11:30</span>
+              <div class="agenda__main"><h3>Przerwa kawowa</h3></div>
+              <span class="badge badge--gray">Przerwa</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">12:00</span>
+              <div class="agenda__main">
+                <h3>Panel: klaster energii jako narzędzie rozwoju lokalnego</h3>
+                <p class="agenda__meta">Samorządy, operatorzy, instytucje finansowe</p>
+              </div>
+              <span class="badge badge--red">Panel</span>
+            </li>
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">13:30</span>
+              <div class="agenda__main"><h3>Lunch</h3></div>
+              <span class="badge badge--gray">Przerwa</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">14:30</span>
+              <div class="agenda__main">
+                <h3>Fotowoltaika i magazynowanie energii w praktyce samorządu</h3>
+                <p class="agenda__meta">Wdrożenia, eksploatacja, rozliczenia</p>
+              </div>
+              <span class="badge">Sesja</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">16:00</span>
+              <div class="agenda__main">
+                <h3>Panel: finansowanie inwestycji energetycznych</h3>
+                <p class="agenda__meta">KPO, środki krajowe, modele partnerstwa</p>
+              </div>
+              <span class="badge badge--red">Panel</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">17:30</span>
+              <div class="agenda__main"><h3>Zakończenie pierwszego dnia</h3></div>
+              <span class="badge">Sesja</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="panel-day2" role="tabpanel" aria-labelledby="tab-day2" tabindex="0" hidden>
+          <ul class="agenda">
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">09:00</span>
+              <div class="agenda__main"><h3>Kawa i networking</h3></div>
+              <span class="badge badge--gray">Rejestracja</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">09:30</span>
+              <div class="agenda__main">
+                <h3>Technologie wodorowe i gospodarka wodorowa</h3>
+                <p class="agenda__meta">Magazyn wodorowy, produkcja, zastosowania</p>
+              </div>
+              <span class="badge">Sesja</span>
+            </li>
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">11:00</span>
+              <div class="agenda__main"><h3>Przerwa kawowa</h3></div>
+              <span class="badge badge--gray">Przerwa</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">11:30</span>
+              <div class="agenda__main">
+                <h3>Panel: współpraca sektora publicznego i prywatnego</h3>
+                <p class="agenda__meta">Inwestycje, innowacje, łańcuch dostaw</p>
+              </div>
+              <span class="badge badge--red">Panel</span>
+            </li>
+            <li class="agenda__row agenda__row--break">
+              <span class="agenda__time">13:00</span>
+              <div class="agenda__main"><h3>Lunch</h3></div>
+              <span class="badge badge--gray">Przerwa</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">14:00</span>
+              <div class="agenda__main">
+                <h3>Warsztat: przygotowanie gminy do inwestycji w OZE</h3>
+                <p class="agenda__meta">Limit miejsc — zapisy w trakcie rejestracji</p>
+              </div>
+              <span class="badge badge--amber">Warsztat</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">15:30</span>
+              <div class="agenda__main"><h3>Podsumowanie i zamknięcie konferencji</h3></div>
+              <span class="badge">Sesja</span>
+            </li>
+            <li class="agenda__row">
+              <span class="agenda__time">16:00</span>
+              <div class="agenda__main">
+                <h3>Prezentacja autobusu demonstracyjnego Mercedes-Benz</h3>
+                <p class="agenda__meta">Pokaz dla uczestników konferencji i mieszkańców</p>
+              </div>
+              <span class="badge badge--amber">Pokaz</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== PRELEGENCI -->
+    <section class="section section--mist" id="prelegenci" aria-labelledby="prelegenci-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Prelegenci i moderatorzy</p>
+          <h2 class="section-title" id="prelegenci-title">Eksperci od energii w jednym miejscu</h2>
+          <p class="lead">
+            Lista prelegentów jest w przygotowaniu. Poniżej miejsce na karty osób —
+            każda zawiera zdjęcie, funkcję, instytucję i temat wystąpienia.
+          </p>
+        </div>
+
+        <!-- CONTENT: karty prelegentów – uzupełnić dane i zdjęcia -->
         <ul class="speaker-grid">
-          <li class="speaker">
-            <div class="speaker__photo" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <circle cx="12" cy="8" r="4"></circle>
-                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
-              </svg>
+          <li class="speaker reveal">
+            <div class="speaker__photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+              <span class="badge badge--glass">Wkrótce</span>
             </div>
             <div class="speaker__body">
-              <h3>Lista prelegentów</h3>
-              <p class="speaker__role">Zostanie ogłoszona wkrótce.</p>
+              <h3>Imię i nazwisko</h3>
+              <p class="speaker__role">Samorząd · Gmina i Miasto Odolanów</p>
+              <p class="speaker__topic">Temat wystąpienia do uzupełnienia</p>
+            </div>
+          </li>
+          <li class="speaker reveal">
+            <div class="speaker__photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+              <span class="badge badge--glass">Wkrótce</span>
+            </div>
+            <div class="speaker__body">
+              <h3>Imię i nazwisko</h3>
+              <p class="speaker__role">Energetyka · operator systemu</p>
+              <p class="speaker__topic">Temat wystąpienia do uzupełnienia</p>
+            </div>
+          </li>
+          <li class="speaker reveal">
+            <div class="speaker__photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+              <span class="badge badge--glass">Wkrótce</span>
+            </div>
+            <div class="speaker__body">
+              <h3>Imię i nazwisko</h3>
+              <p class="speaker__role">Technologie wodorowe · nauka</p>
+              <p class="speaker__topic">Temat wystąpienia do uzupełnienia</p>
+            </div>
+          </li>
+          <li class="speaker reveal">
+            <div class="speaker__photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+              <span class="badge badge--glass">Wkrótce</span>
+            </div>
+            <div class="speaker__body">
+              <h3>Imię i nazwisko</h3>
+              <p class="speaker__role">Finansowanie · instytucja publiczna</p>
+              <p class="speaker__topic">Temat wystąpienia do uzupełnienia</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="miejsce" class="section" aria-labelledby="miejsce-title">
+    <!-- ========================================================== MIEJSCE -->
+    <section class="section" id="miejsce" aria-labelledby="miejsce-title">
       <div class="container">
-        <h2 id="miejsce-title">Miejsce</h2>
+        <div class="section-head">
+          <p class="eyebrow">Miejsce i informacje praktyczne</p>
+          <h2 class="section-title" id="miejsce-title">Teren Klastra Energii</h2>
+          <p class="lead">
+            Konferencja odbywa się w miejscu realizacji projektu — wśród instalacji,
+            o których będziemy rozmawiać.
+          </p>
+        </div>
+
         <div class="place">
-          <div class="prose">
-            <!-- CONTENT: nazwa obiektu, adres, dojazd, parking -->
-            <p>Treść do uzupełnienia.</p>
+          <div class="place__info reveal">
+            <!-- CONTENT: uzupełnić lokalizację, dojazd i parking -->
+            <dl class="facts">
+              <div class="fact">
+                <dt>Lokalizacja</dt>
+                <dd>Klaster Energii Odolanów–Przygodzice–Sulmierzyce<br>gmina Odolanów, powiat ostrowski, woj. wielkopolskie</dd>
+              </div>
+              <div class="fact">
+                <dt>Dojazd</dt>
+                <dd>Informacje o dojeździe i transporcie zostaną podane wraz z programem.</dd>
+              </div>
+              <div class="fact">
+                <dt>Parking</dt>
+                <dd>Miejsca parkingowe dla uczestników — szczegóły w informacjach organizacyjnych.</dd>
+              </div>
+              <div class="fact">
+                <dt>Wstęp</dt>
+                <dd>Wydarzenie otwarte dla zarejestrowanych uczestników. Udział w konferencji jest bezpłatny.</dd>
+              </div>
+            </dl>
+
+            <figure class="media media--wide">
+              <img src="assets/hero-odolanow.jpg" width="1600" height="1067" alt="Odolanów — widok na miasto i okolicę" loading="lazy"
+                   srcset="assets/hero-odolanow-800.jpg 800w, assets/hero-odolanow.jpg 1600w"
+                   sizes="(min-width: 960px) 46vw, 92vw">
+              <figcaption class="media__tag">Odolanów</figcaption>
+            </figure>
           </div>
-          <!-- CONTENT: zastąpić blok mapą (np. Google Maps embed) -->
-          <div class="map-placeholder">Mapa dojazdu do uzupełnienia</div>
+
+          <div class="place__map reveal">
+            <div class="map">
+              <iframe
+                title="Mapa — Odolanów, gmina Odolanów"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=17.6200%2C51.5400%2C17.7300%2C51.6050&amp;layer=mapnik&amp;marker=51.5736%2C17.6747"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p class="map__caption">
+              Odolanów, woj. wielkopolskie ·
+              <a href="https://www.openstreetmap.org/?mlat=51.5736&amp;mlon=17.6747#map=13/51.5736/17.6747" rel="noopener">otwórz większą mapę</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ================================================== AUTOBUS -->
+        <article class="bus" aria-labelledby="bus-title">
+          <div class="bus__slot">
+            <!-- CONTENT: zdjęcia autobusu demonstracyjnego -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"></path><path d="M4 16h16M7 16v2M17 16v2M7 8h10M7 11h10"></path></svg>
+            <span>Zdjęcia autobusu<br>do uzupełnienia</span>
+          </div>
+          <div class="bus__body">
+            <p class="eyebrow eyebrow--amber">Wydarzenie towarzyszące</p>
+            <h3 class="bus__title" id="bus-title">Autobus demonstracyjny Mercedes-Benz</h3>
+            <!-- CONTENT: opis pojazdu i charakteru pokazu -->
+            <p>
+              Uczestnicy konferencji oraz mieszkańcy będą mogli zobaczyć z bliska autobus
+              demonstracyjny Mercedes-Benz i poznać rozwiązania stosowane w nowoczesnym
+              transporcie niskoemisyjnym.
+            </p>
+            <dl class="facts facts--compact">
+              <div class="fact"><dt>Charakter</dt><dd>Pokaz statyczny dla uczestników i mieszkańców</dd></div>
+              <div class="fact"><dt>Termin</dt><dd>28 kwietnia 2027 r., po zakończeniu obrad</dd></div>
+              <div class="fact"><dt>Wstęp</dt><dd>Otwarty — bez dodatkowej rejestracji</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================================================== ORGANIZATORZY -->
+    <section class="section section--mist" id="organizatorzy" aria-labelledby="organizatorzy-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Organizatorzy, partnerzy i patronaty</p>
+          <h2 class="section-title" id="organizatorzy-title">Wspólnie dla transformacji energetycznej</h2>
+        </div>
+
+        <!-- CONTENT: logotypy i nazwy – dodawać/usuwać w każdej kategorii -->
+        <div class="logo-group">
+          <h3 class="logo-group__title">Organizatorzy</h3>
+          <ul class="logo-grid">
+            <li class="logo-cell logo-cell--brand">
+              <img src="assets/logo-odolanow.png" width="156" height="195" alt="">
+              <strong>Gmina i Miasto Odolanów</strong>
+            </li>
+            <li class="logo-cell"><strong>Gmina Przygodzice</strong><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><strong>Gmina Sulmierzyce</strong><span>logotyp do uzupełnienia</span></li>
+          </ul>
+        </div>
+
+        <div class="logo-group">
+          <h3 class="logo-group__title">Partnerzy strategiczni</h3>
+          <ul class="logo-grid">
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+          </ul>
+        </div>
+
+        <div class="logo-group">
+          <h3 class="logo-group__title">Partnerzy merytoryczni</h3>
+          <ul class="logo-grid logo-grid--sm">
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+          </ul>
+        </div>
+
+        <div class="logo-group">
+          <h3 class="logo-group__title">Patronaty honorowe</h3>
+          <ul class="logo-grid">
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+          </ul>
+        </div>
+
+        <div class="logo-group">
+          <h3 class="logo-group__title">Patronaty medialne</h3>
+          <ul class="logo-grid logo-grid--sm">
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+            <li class="logo-cell"><span>logotyp do uzupełnienia</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="organizatorzy" class="section" aria-labelledby="organizatorzy-title">
-      <div class="container">
-        <h2 id="organizatorzy-title">Organizatorzy, partnerzy i patronaty</h2>
-        <!-- CONTENT: logotypy lub nazwy organizatorów, partnerów i patronów -->
-        <ul class="org-grid">
-          <li>Treść do uzupełnienia.</li>
-        </ul>
-      </div>
-    </section>
+    <!-- ====================================================== REJESTRACJA -->
+    <section class="section section--ink" id="rejestracja" aria-labelledby="rejestracja-title">
+      <div class="container reg">
+        <div class="reg__intro">
+          <p class="eyebrow eyebrow--amber">Rejestracja</p>
+          <h2 class="section-title" id="rejestracja-title">Zgłoś udział w konferencji</h2>
+          <p class="lead">
+            Wypełnienie formularza zajmuje około dwóch minut. Po wysłaniu zgłoszenia
+            otrzymasz potwierdzenie na podany adres e-mail.
+          </p>
 
-    <section id="rejestracja" class="section" aria-labelledby="rejestracja-title">
-      <div class="container">
-        <h2 id="rejestracja-title">Formularz rejestracji</h2>
+          <ul class="ticks ticks--light">
+            <li>Potwierdzenie przyjęcia zgłoszenia e-mailem</li>
+            <li>Informacje organizacyjne przed wydarzeniem</li>
+            <li>Dane przetwarzane zgodnie z RODO</li>
+          </ul>
+
+          <p class="reg__contact">
+            Problemy z formularzem?<br>
+            <a href="mailto:sekretariat@odolanow.pl">sekretariat@odolanow.pl</a> ·
+            <a href="tel:+48627331581">62 733 15 81</a>
+          </p>
+        </div>
 
         <div class="form-card">
-          <form id="registration-form" class="registration-form" action="#" method="post" novalidate>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="reg-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
+          <form id="registration-form" class="form" action="#" method="post" novalidate>
+            <fieldset class="form__group">
+              <legend>Dane uczestnika</legend>
+
+              <div class="field">
+                <label for="reg-name">Imię i nazwisko <span class="req" aria-hidden="true">*</span></label>
                 <input type="text" id="reg-name" name="name" autocomplete="name"
-                       required aria-required="true">
+                       required aria-required="true" aria-describedby="err-name">
+                <p class="field__error" id="err-name" hidden></p>
               </div>
-            </div>
 
-            <div class="form-row">
-              <div class="form-field">
-                <label for="reg-email">Adres e-mail <span aria-hidden="true">*</span></label>
-                <input type="email" id="reg-email" name="email" autocomplete="email"
-                       required aria-required="true">
+              <div class="grid-2">
+                <div class="field">
+                  <label for="reg-org">Instytucja / firma <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="reg-org" name="organization" autocomplete="organization"
+                         required aria-required="true" aria-describedby="err-org">
+                  <p class="field__error" id="err-org" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="reg-position">Stanowisko / funkcja</label>
+                  <input type="text" id="reg-position" name="position" autocomplete="organization-title">
+                </div>
               </div>
-              <div class="form-field">
-                <label for="reg-phone">Telefon</label>
-                <input type="tel" id="reg-phone" name="phone" autocomplete="tel">
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="reg-email">Adres e-mail <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="reg-email" name="email" autocomplete="email"
+                         required aria-required="true" aria-describedby="err-email">
+                  <p class="field__error" id="err-email" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="reg-phone">Telefon <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="reg-phone" name="phone" autocomplete="tel"
+                         required aria-required="true" aria-describedby="err-phone">
+                  <p class="field__error" id="err-phone" hidden></p>
+                </div>
               </div>
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="reg-city">Miejscowość</label>
+                  <input type="text" id="reg-city" name="city" autocomplete="address-level2">
+                </div>
+                <div class="field">
+                  <label for="reg-type">Rodzaj zgłoszenia</label>
+                  <select id="reg-type" name="type">
+                    <option value="uczestnik">Uczestnik</option>
+                    <option value="prelegent">Prelegent / moderator</option>
+                    <option value="partner">Partner / wystawca</option>
+                    <option value="media">Przedstawiciel mediów</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="reg-notes">Dodatkowe informacje (opcjonalnie)</label>
+                <textarea id="reg-notes" name="notes" rows="3"
+                          placeholder="np. potrzeby dostępnościowe, dieta, pytania do prelegentów"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__group">
+              <legend>Zgody</legend>
+
+              <div class="checkbox">
+                <input type="checkbox" id="reg-consent-rodo" name="consent_rodo"
+                       required aria-required="true" aria-describedby="hint-rodo err-rodo">
+                <div>
+                  <label for="reg-consent-rodo">
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu organizacji
+                    konferencji H<sub>2</sub>Odolanów, zgodnie z informacją o przetwarzaniu danych. <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <p class="hint" id="hint-rodo">
+                    Administratorem danych jest Gmina i Miasto Odolanów, ul. Rynek 1, 63-430 Odolanów.
+                    <a href="#" data-privacy-link>Polityka prywatności</a>.
+                  </p>
+                  <p class="field__error" id="err-rodo" hidden></p>
+                </div>
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" id="reg-consent-contact" name="consent_contact">
+                <div>
+                  <label for="reg-consent-contact">
+                    Chcę otrzymywać informacje o kolejnych wydarzeniach i projektach energetycznych gminy.
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="hp" aria-hidden="true">
+              <label for="reg-website">Nie wypełniaj tego pola</label>
+              <input type="text" id="reg-website" name="website" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="form-field">
-              <label for="reg-organization">Organizacja</label>
-              <input type="text" id="reg-organization" name="organization" autocomplete="organization">
-            </div>
+            <button class="btn btn--primary btn--block" type="submit" id="reg-submit">
+              Wyślij zgłoszenie
+            </button>
 
-            <div class="form-field form-field--checkbox">
-              <input type="checkbox" id="reg-consent-rodo" name="consent_rodo"
-                     required aria-required="true">
-              <label for="reg-consent-rodo">Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z RODO <span aria-hidden="true">*</span></label>
-              <p class="hint" id="reg-consent-rodo-hint">Administratorem danych jest Gmina i Miasto Odolanów. Szczegóły w polityce prywatności.</p>
-            </div>
+            <p class="form__note">
+              Pole oznaczone <span class="req" aria-hidden="true">*</span> jest obowiązkowe.
+              Formularz jest zabezpieczony przed automatycznymi zgłoszeniami.
+            </p>
 
-            <div class="form-field form-field--checkbox">
-              <input type="checkbox" id="reg-consent-marketing" name="consent_marketing">
-              <label for="reg-consent-marketing">Wyrażam zgodę na otrzymywanie korespondencji marketingowej</label>
-            </div>
-
-            <button class="btn btn--primary" type="submit">Zarejestruj się</button>
-
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
 
-    <section id="kontakt" class="section" aria-labelledby="kontakt-title">
+    <!-- ========================================================= KONTAKT -->
+    <section class="section" id="kontakt" aria-labelledby="kontakt-title">
       <div class="container">
-        <h2 id="kontakt-title">Kontakt</h2>
-        <!-- CONTENT: dane osoby kontaktowej / urzędu -->
-        <address>
-          <ul class="contact-list">
-            <li><span class="label">E-mail</span><span>—</span></li>
-            <li><span class="label">Telefon</span><span>—</span></li>
-            <li><span class="label">Adres</span><span>—</span></li>
-          </ul>
-        </address>
+        <div class="section-head">
+          <p class="eyebrow">Kontakt</p>
+          <h2 class="section-title" id="kontakt-title">Masz pytanie? Napisz do nas</h2>
+        </div>
+
+        <div class="contact">
+          <div class="contact__card">
+            <h3>Organizator</h3>
+            <address>
+              <strong>Urząd Gminy i Miasta Odolanów</strong><br>
+              ul. Rynek 1<br>
+              63-430 Odolanów
+            </address>
+            <ul class="contact__list">
+              <li><span>Telefon</span><a href="tel:+48627331581">62 733 15 81</a></li>
+              <li><span>E-mail</span><a href="mailto:sekretariat@odolanow.pl">sekretariat@odolanow.pl</a></li>
+              <li><span>Strona</span><a href="https://www.odolanow.pl/" rel="noopener">odolanow.pl</a></li>
+            </ul>
+          </div>
+
+          <div class="contact__card">
+            <h3>Osoba kontaktowa</h3>
+            <!-- CONTENT: imię, nazwisko, komórka organizacyjna, bezpośredni kontakt -->
+            <p class="contact__person">Imię i nazwisko do uzupełnienia<br><span>komórka organizacyjna / koordynacja konferencji</span></p>
+            <ul class="contact__list">
+              <li><span>Telefon</span><span class="muted">do uzupełnienia</span></li>
+              <li><span>E-mail</span><span class="muted">do uzupełnienia</span></li>
+            </ul>
+            <p class="contact__note">
+              W sprawach medialnych i partnerskich prosimy o kontakt z sekretariatem urzędu.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="footer">
-    <div class="footer-links">
-      <div class="container">
-        <ul class="nav-list">
+  <!-- ============================================================ FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-odolanow.png" width="156" height="195" alt="Herb Gminy i Miasta Odolanów">
+        <p>
+          <strong>H<sub>2</sub>Odolanów 2027</strong><br>
+          Ogólnopolska konferencja o energetyce<br>
+          27–28 kwietnia 2027 · Odolanów
+        </p>
+      </div>
+
+      <nav class="footer__col" aria-labelledby="footer-nav-title">
+        <h2 class="footer__title" id="footer-nav-title">Na stronie</h2>
+        <ul>
           <li><a href="#o-konferencji">O konferencji</a></li>
           <li><a href="#program">Program</a></li>
           <li><a href="#prelegenci">Prelegenci</a></li>
+          <li><a href="#miejsce">Miejsce</a></li>
           <li><a href="#rejestracja">Rejestracja</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Informacje</h2>
+        <ul>
+          <li><a href="https://www.odolanow.pl/" rel="noopener">Strona Gminy i Miasta Odolanów</a></li>
+          <li><a href="#" data-privacy-link>Polityka prywatności</a></li>
+          <li><a href="#" data-accessibility-link>Deklaracja dostępności</a></li>
+          <li><a href="https://www.odolanow.pl/37,biuletyn-informacji-publicznej" rel="noopener">Biuletyn Informacji Publicznej</a></li>
         </ul>
       </div>
-    </div>
 
-    <div class="footer-info">
-      <div class="container footer-info__inner">
-        <img src="assets/logo-odolanow.png" width="370" height="196" alt="">
-        <p>Konferencja H2Odolanów &middot; Gmina i Miasto Odolanów, ul. Rynek 1, 63-430 Odolanów</p>
+      <div class="footer__col">
+        <h2 class="footer__title">Dofinansowanie</h2>
+        <p class="footer__funding">
+          Projekt realizowany w ramach Klastra Energii Odolanów–Przygodzice–Sulmierzyce,
+          ze środków Krajowego Planu Odbudowy i Zwiększania Odporności.
+        </p>
       </div>
     </div>
 
-    <div class="footer-copy">
-      <div class="container">
-        <p>&copy; 2026 H2Odolanów. Wszelkie prawa zastrzeżone.</p>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2027 H<sub>2</sub>Odolanów · Gmina i Miasto Odolanów</p>
+        <p class="footer__credits">
+          Fotografie: Jacek Halicki (CC BY-SA 4.0), JakobHosp (CC BY 4.0), Gmina i Miasto Odolanów.
+        </p>
       </div>
     </div>
   </footer>
