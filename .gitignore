@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+
+# Logi i pliki tymczasowe
+*.log
+*.tmp
