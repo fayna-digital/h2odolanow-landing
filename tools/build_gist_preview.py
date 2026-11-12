@@ -45,7 +45,11 @@ def build(repo: Path) -> str:
 def main(argv: list[str] | None = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     repo = Path(args[0]).resolve() if args else Path(__file__).resolve().parent.parent
-    out = Path(args[1]).resolve() if len(args) > 1 else Path("/tmp/h2odolanow-preview.html")
+    out = (
+        Path(args[1]).resolve()
+        if len(args) > 1
+        else Path("/tmp/h2odolanow-preview.html")
+    )
 
     html = build(repo)
     out.parent.mkdir(parents=True, exist_ok=True)
