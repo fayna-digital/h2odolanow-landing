@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Pismo ofertowe — H2O!dolanów (szkic)</title>
+<style>
+  @page { size: A4; margin: 18mm 18mm 16mm; }
+  :root {
+    --ink: #0c1b2a;
+    --red: #d8201a;
+    --amber: #f6c445;
+    --line: #d8e0e8;
+    --muted: #5a6b7b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #12222f;
+  }
+  .draft {
+    border: 1.5px solid var(--red);
+    color: var(--red);
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  .head img { width: 34px; height: auto; }
+  .head b { font-size: 13pt; letter-spacing: .01em; }
+  .head span { display: block; font-size: 8.5pt; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .meta { font-size: 10pt; }
+  .meta div { margin-bottom: 2px; }
+  .subject { font-weight: 700; margin: 14px 0 16px; }
+  p { margin: 0 0 10px; text-align: justify; }
+  h2 { font-size: 11.5pt; margin: 16px 0 6px; color: var(--ink); }
+  ol.answers { margin: 0 0 10px; padding-left: 18px; }
+  ol.answers li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 9.5pt; }
+  th, td { border: 1px solid var(--line); padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #eef2f6; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .05em; }
+  tr.rec td { background: #f7f9fb; }
+  .num { text-align: right; white-space: nowrap; }
+  .small { font-size: 9pt; color: var(--muted); }
+  .sign { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 10px; width: 46%; margin-left: auto; }
+  .sign div { margin-bottom: 3px; }
+  .footer { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 8px; font-size: 8.5pt; color: var(--muted); }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<p class="draft">Szkic — do wewnętrznego przeglądu. Nie wysłano do urzędu.</p>
+
+<div class="head">
+  <img src="https://raw.githubusercontent.com/fayna-digital/h2odolanow-landing/main/assets/logo-odolanow.png" alt="">
+  <div>
+    <b>Fayna Digital</b>
+    <span>Realizacja podstron, modułów i integracji</span>
+  </div>
+</div>
+
+<div class="meta">
+  <div>Miejscowość: <em>[do uzupełnienia]</em>, dnia <em>[do uzupełnienia]</em> r.</div>
+  <div><b>Adresat:</b> Urząd Gminy i Miasta Odolanów, ul. Rynek 1, 63-430 Odolanów</div>
+  <div><b>Dotyczy:</b> podstrony internetowej konferencji <b>H2O!dolanów</b> (27–28 kwietnia 2027 r.), postępowanie nr <em>[do uzupełnienia]</em></div>
+</div>
+
+<p class="subject">Szanowni Państwo,</p>
+
+<p>W odpowiedzi na ogłoszenie o postępowaniu <em>[do uzupełnienia: numer postępowania]</em> przedstawiamy ofertę
+wykonania <b>podstrony internetowej typu landing page</b> dla ogólnopolskiej konferencji H2O!dolanów,
+zgodnie z <i>Opisem funkcjonalno-technicznym</i> (dalej: OPZ).</p>
+
+<p>Przedmiotem oferty jest podstrona w domenie i CMS Urzędu obejmująca wszystkie sekcje wymagane
+w OPZ 4.1–4.10, utrzymana w standardzie dostępności WCAG 2.1 AA, z modułem rejestracji, bazą
+zgłoszeń, potwierdzeniem e-mail dla uczestnika, powiadomieniem dla organizatora oraz panelem
+administracyjnym z eksportem do Excela. Wykonanie obejmuje projekt graficzny, warstwę
+prezentacyjną, moduł rejestracji, panel, testy, wdrożenie oraz instrukcję i szkolenie.</p>
+
+<h2>1. Warianty realizacji</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:14%">Wariant</th><th style="width:46%">Zakres</th><th style="width:14%">Termin</th><th style="width:16%">Cena netto</th><th style="width:10%"></th></tr>
+  </thead>
+  <tbody>
+    <tr class="rec"><td><b>A</b> — rekomendowany</td><td>szablon w CMS Urzędu + moduł rejestracji + panel zgłoszeń</td><td>7 tygodni</td><td class="num"><b>37 400 zł</b></td><td>☐</td></tr>
+    <tr><td>B</td><td>podstrona statyczna + własny panel treści (niezależny od CMS)</td><td>8 tygodni</td><td class="num">43 200 zł</td><td>☐</td></tr>
+    <tr><td>C — minimalny</td><td>frontend statyczny + rejestracja w formularzu CMS, bez panelu</td><td>4 tygodnie</td><td class="num">24 800 zł</td><td>☐</td></tr>
+  </tbody>
+</table>
+
+<p class="small">Rekomendujemy wariant A: spełnia wszystkie punkty OPZ, w tym edycję treści przez pracowników Urzędu,
+nie wprowadza drugiego systemu do utrzymania i korzysta z infrastruktury, którą Urząd już ma.</p>
+
+<h2>2. Odpowiedzi na punkty OPZ §8</h2>
+
+<ol class="answers">
+  <li><b>Całkowity koszt</b> — 37 400 zł netto (wariant A); wariant B 43 200 zł; wariant C 24 800 zł. Stawka wyceny 180 zł/h.</li>
+  <li><b>Czas realizacji</b> — 7 tygodni od przekazania materiałów (OPZ §7) i podpisania umowy; frontend w 3. tygodniu.</li>
+  <li><b>Integracja z CMS i infrastrukturą</b> — tak, o ile CMS pozwala na własny szablon; wariant B gdy nie pozwala.</li>
+  <li><b>Projekt graficzny</b> — 5 760 zł netto (2 koncepcje, 2 rundy poprawek, desktop i mobile, identyfikacja H2O!dolanów).</li>
+  <li><b>Wdrożenie techniczne</b> — 10 080 zł netto (frontend, etap 3) + 4 320 zł netto (szablon CMS, etap 4).</li>
+  <li><b>Formularz z panelem zgłoszeń</b> — 11 520 zł netto (API, antyspam, baza, 2 wiadomości e-mail, panel, eksport CSV).</li>
+  <li><b>Jeden system</b> — tak: rejestracja, baza i eksport należą do jednego modułu po stronie Urzędu.</li>
+  <li><b>Dodatkowe koszty</b> — licencje 0 zł; hosting, domena i SMTP po stronie Urzędu; utrzymanie 249 zł netto/mies. (opcjonalnie).</li>
+  <li><b>Samodzielna edycja treści</b> — tak w wariancie A: treści w panelu CMS, pola i treści e-mail w panelu zgłoszeń.</li>
+  <li><b>Wdrożenie pracowników</b> — instrukcja PDF + szkolenie online 2 h dla 2–5 osób z nagraniem.</li>
+  <li><b>Późniejsze zmiany</b> — gwarancja 24 miesiące w cenie; opieka 249 zł/mies.; zmiany ponad pakiet 190 zł/h.</li>
+</ol>
+
+<h2>3. Warunki</h2>
+
+<p><b>Płatności:</b> 30% zaliczki, 40% po akceptacji projektu graficznego i frontendu, 30% po odbiorze końcowym
+i szkoleniu; faktury z 14-dniowym terminem płatności. <b>Gwarancja:</b> 24 miesiące na wady ukryte
+i błędy działania plus 30 dni bezpłatnej opieki powdrożeniowej w cenie. <b>Utrzymanie (opcjonalnie):</b>
+249 zł netto/miesiąc — kopie zapasowe, aktualizacje bezpieczeństwa, monitoring dostępności, 2 h zmian
+miesięcznie; zmiany ponad pakiet 190 zł/h, rozliczenie miesięcznie z wypowiedzeniem.</p>
+
+<p><b>Po stronie Urzędu:</b> teksty, program, dane prelegentów, logotypy, zdjęcia, dane kontaktowe, wzór klauzuli
+RODO zatwierdzony przez IOD, dostęp do CMS i skrzynki pocztowej, decyzje merytoryczne.
+<b>Poza zakresem:</b> produkcja wideo i sesje zdjęciowe, copywriting, tłumaczenia, materiały drukowane,
+opłaty hostingowe i domenne, płatne usługi zewnętrzne. Ceny netto w PLN, VAT doliczany wg stawki
+obowiązującej w dniu wystawienia faktury.</p>
+
+<h2>4. Załączniki</h2>
+
+<ol class="answers">
+  <li>Odpowiedzi na punkty 1–11 OPZ §8.</li>
+  <li>Opis techniczny realizacji: warstwy, dostępność WCAG 2.1 AA, bezpieczeństwo i RODO.</li>
+  <li>Harmonogram szczegółowy, schemat płatności, gwarancja i utrzymanie.</li>
+  <li>Portfolio Wykonawcy i przykłady zrealizowanych projektów.</li>
+</ol>
+
+<p>Oferta jest ważna 30 dni od daty jej sporządzenia. Kontakt w sprawie pytań: <b>kontakt@fayna.agency</b>.</p>
+
+<div class="sign">
+  <div>Z poważaniem,</div>
+  <div style="height: 26px"></div>
+  <div><em>[do uzupełnienia: imię i nazwisko]</em></div>
+  <div><em>[do uzupełnienia: stanowisko]</em></div>
+  <div><b>Fayna Digital</b></div>
+  <div class="small"><em>[do uzupełnienia: adres, NIP, REGON]</em></div>
+  <div class="small">kontakt@fayna.agency</div>
+</div>
+
+<div class="footer">
+  Materiały źródłowe i pełna dokumentacja realizacji: <b>fayna-digital/h2odolanow-landing</b> (repozytorium publiczne).
+  Dokument roboczy — przed wysyłką uzupełnić pola oznaczone kursywą.
+</div>
+
+</body>
+</html>
